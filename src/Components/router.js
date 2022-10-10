@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import About from "./About";
+import AllQuiz from "./AllQuiz";
 import Blog from "./Blog";
 import ErrorPage from "./ErrorPage";
 import Main from "./Main";
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
             { path: '/statistics', element: <Statistics /> },
             { path: '/blog', element: <Blog /> },
             { path: '/about', element: <About /> },
+            { path: '/quiz/:id', element: <AllQuiz />, loader: async ({ params }) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`) }
         ]
     }
 ]);

@@ -5,7 +5,6 @@ import './Topics.css'
 const Topics = () => {
     const allSubjects = useLoaderData();
     const subjects = allSubjects.data;
-    console.log(subjects);
     return (
         <div>
             <div className=' topic-bg-img-part h-[70vh]  w-full  mx-auto '>
@@ -17,7 +16,7 @@ const Topics = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className=' my-32 w-9/12 mx-auto '>
                 <AllSubjectsInfo subjects={subjects} />
             </div>
         </div>
