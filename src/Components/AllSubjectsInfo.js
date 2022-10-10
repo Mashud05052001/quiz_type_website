@@ -6,7 +6,7 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const AllSubjectsInfo = ({ subjects }) => {
     const slideRef = useRef(null);
-    console.log(slideRef.current);
+    // console.log(slideRef.current);
     const settings = {
         dots: true,
         infinite: true,
