@@ -1,6 +1,11 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import AllSubjectsInfo from './AllSubjectsInfo';
 import './Topics.css'
 const Topics = () => {
+    const allSubjects = useLoaderData();
+    const subjects = allSubjects.data;
+    console.log(subjects);
     return (
         <div>
             <div className=' topic-bg-img-part h-[70vh]  w-full  mx-auto '>
@@ -11,6 +16,9 @@ const Topics = () => {
                         <p>Here you can easily perticipate and can learn a lot of things</p>
                     </div>
                 </div>
+            </div>
+            <div>
+                <AllSubjectsInfo subjects={subjects} />
             </div>
         </div>
     );
