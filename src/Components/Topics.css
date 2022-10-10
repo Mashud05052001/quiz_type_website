@@ -1,0 +1,5 @@
+.topic-bg-img-part {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('../Images/homeBgImg1.jpg') no-repeat center;
+    background-size: cover;
+    color: white;
+}
