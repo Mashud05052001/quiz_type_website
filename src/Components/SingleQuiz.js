@@ -3,12 +3,12 @@ import SingleAnswerShowing from './SingleAnswerShowing';
 import { EyeIcon } from '@heroicons/react/24/solid';
 import Swal from 'sweetalert2';
 
-const SingleQuiz = ({ quiz, number, total, setTotal, gems, setGems }) => {
+const SingleQuiz = ({ quiz, number, result, setResult, gems, setGems }) => {
     const { correctAnswer, id, options, question } = quiz;
     const eyeClickToShowResult = () => {
         console.log(correctAnswer);
         Swal.fire({
-            title: 'Do you want to see the answer? This will reduce your 1 gems',
+            title: 'Do you want to see the answer? It will reduce your 1 gems',
             showDenyButton: true,
             confirmButtonText: 'Yes',
             denyButtonText: `No`,
@@ -43,7 +43,8 @@ const SingleQuiz = ({ quiz, number, total, setTotal, gems, setGems }) => {
             </div>
             <div>
                 {
-                    options.map((option, indx) => <SingleAnswerShowing key={indx} answer={option} correctAnswer={correctAnswer} total={total} setTotal={setTotal} number={number} />)
+                    options.map((option, indx) => <SingleAnswerShowing key={indx} answer={option} correctAnswer={correctAnswer}
+                        result={result} setResult={setResult} number={number} />)
                 }
             </div>
 

@@ -3,17 +3,23 @@ import { useLoaderData } from 'react-router-dom';
 import SingleQuiz from './SingleQuiz';
 import { FireIcon } from '@heroicons/react/24/solid'
 import Swal from 'sweetalert2';
-
+import './AllQuiz.css'
 
 const AllQuiz = () => {
-    const [total, setTotal] = useState(0);
+    const [result, setResult] = useState([]);
     const questions = useLoaderData();
     const allQues = questions.data.questions;
     const haldOfQuestion = parseInt(allQues.length / 2);
     const [gems, setGems] = useState(haldOfQuestion);
 
+    let correct = 0;
+    result.forEach(item => {
+        if (item.providedAnswer === item.correctAnswer) {
+            correct++;
+        }
+    })
     const handleShowResult = () => {
-        console.log(1);
+        Swal.fire(`Your Correct Answer is ${correct}`)
     }
 
     return (
@@ -26,7 +32,7 @@ const AllQuiz = () => {
                 </div>
                 <div className='grid grid-cols-2 gap-x-8'>
                     {
-                        allQues.map((item, indx) => <SingleQuiz key={item.id} quiz={item} number={indx} total={total} setTotal={setTotal} gems={gems} setGems={setGems} />)
+                        allQues.map((item, indx) => <SingleQuiz key={item.id} quiz={item} number={indx} result={result} setResult={setResult} gems={gems} setGems={setGems} />)
                     }
                 </div>
             </div>

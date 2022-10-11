@@ -5,10 +5,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const SingleAnswerShowing = ({ number, answer, correctAnswer, total, setTotal }) => {
+const SingleAnswerShowing = ({ number, answer, correctAnswer, result, setResult }) => {
 
     const [fill, setFill] = useState(false);
-    const [clicked, setClicked] = useState('');
     const correctToasting = () => {
         toast.success('Correct Answer!', {
             position: "top-right",
@@ -33,18 +32,25 @@ const SingleAnswerShowing = ({ number, answer, correctAnswer, total, setTotal })
             theme: "light",
         });
     }
-    let previous = '*&*', present;
-    const handleToCheck = (ans) => {
+
+    const handleToCheck = (ans, num, corr) => {
         if (ans === correctAnswer) {
-            console.log(true);
             correctToasting();
-            setClicked(ans);
-            setTotal(total + 1);
         }
         else {
             wrongToasting();
-            setTotal(total - 1);
         }
+        let obj = { "id": num, "providedAnswer": ans, "correctAnswer": corr };
+        const isPreviousAvailable = result.find(item => item.id === num);
+        if (isPreviousAvailable) {
+            const otherObj = result.filter(item => item.id !== num);
+            setResult([...otherObj, obj])
+        }
+        else {
+            setResult([...result, obj]);
+        }
+
+
         // setFill(true);
     }
     // console.log(answer);
@@ -55,7 +61,7 @@ const SingleAnswerShowing = ({ number, answer, correctAnswer, total, setTotal })
 
                     <input type="radio" className='mt-5 ml-3 cursor-pointer' name={number} />
 
-                    <span className='pl-3  w-full py-3' onClick={() => handleToCheck(answer)}>
+                    <span className='pl-3  w-full py-3' onClick={() => handleToCheck(answer, number, correctAnswer)}>
                         {answer}
                     </span>
                 </label>
