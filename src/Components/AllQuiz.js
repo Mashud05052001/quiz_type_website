@@ -3,7 +3,6 @@ import { useLoaderData } from 'react-router-dom';
 import SingleQuiz from './SingleQuiz';
 import { FireIcon } from '@heroicons/react/24/solid'
 import Swal from 'sweetalert2';
-import './AllQuiz.css'
 
 const AllQuiz = () => {
     const [result, setResult] = useState([]);
@@ -19,7 +18,13 @@ const AllQuiz = () => {
         }
     })
     const handleShowResult = () => {
-        Swal.fire(`Your Correct Answer is ${correct}`)
+        if (allQues.length !== result.length) {
+            Swal.fire(`Please answer the all question`)
+        }
+        else {
+            Swal.fire(`Your Correct Answer is ${correct}`)
+        }
+
     }
 
     return (

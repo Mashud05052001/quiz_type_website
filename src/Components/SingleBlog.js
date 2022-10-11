@@ -5,15 +5,15 @@ const SingleBlog = ({ info }) => {
     const { question, answer, id } = info;
     console.log(show);
     return (
-        <div className='relative border-2 border-gray-500 rounded-2xl mt-4'>
-            <h2 className='  py-2 pl-4'><span className='pr-1 font-semibold'>Q{id}.</span>{question}
+        <div className='relative border-2 border-gray-500 rounded-2xl mt-4 pt-2' >
+            <h2 className='  py-2 pl-4'><span className='pr-1 font-semibold '>Q{id}.</span>{question}
                 <span className='absolute right-10 cursor-pointer' onClick={() => setShow(!show)}>
                     {
                         show ? '➖' : '➕'
                     }
                 </span>
             </h2>
-            <p className={show ? 'openCarousel pl-4 mb-2' : 'closeCarousel pl-4 mb-2'}> <hr className='mr-6 border-2 border-black bg-black opacity-30 rounded-full mb-1' /> <span className='font-semibold'>Answer: </span>{answer}</p>
+            <p className={show ? 'max-h-40 duration-1000 ease-linear pl-3 pb-2 overflow-hidden' : 'max-h-0 overflow-hidden duration-300 ease-linear pl-3 pb-2'}> <hr className='mr-6 border-2 border-black bg-black opacity-30 rounded-full mt-2 mb-1' /> <span className='font-semibold'>Answer: </span>{answer}</p>
         </div>
     );
 };
