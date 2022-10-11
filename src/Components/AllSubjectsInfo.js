@@ -56,7 +56,7 @@ const AllSubjectsInfo = ({ subjects }) => {
             </div>
 
             <div>
-                <h2 className='text-4xl font-bold mb-12 '>Select Your Quiz Topic</h2>
+                <h2 className='text-4xl font-bold mb-12 text-center'>Select Your Quiz Topic</h2>
                 <Slider {...settings} ref={slideRef}>
                     {
                         subjects.map(subject => <SingleSubjectInfo key={subject.id} subject={subject}></SingleSubjectInfo>)
