@@ -1,0 +1,28 @@
+.singleAnswer {
+    position: relative;
+}
+
+[type=radio]:checked::before {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background-color: white;
+    position: absolute;
+    top: 23px;
+    left: 13.5px;
+    border-radius: 30px;
+    border: 2px solid #601c7b !important;
+
+}
+
+[type=radio]:checked::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #601c7b;
+    position: absolute;
+    top: 26.5px;
+    left: 17px;
+    border-radius: 30px;
+
+}
