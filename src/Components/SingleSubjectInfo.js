@@ -9,8 +9,8 @@ const SingleSubjectInfo = ({ subject }) => {
                 <img src={logo} alt='Sorry' />
             </div>
             <div className='text-left mt-4 pl-4 mb-3'>
-                <h2 className='text-3xl'>{name}</h2>
-                <p className='mt-1'>Total Question : {total}</p>
+                <h2 className='text-2xl md:text-3xl'>{name}</h2>
+                <p className='mt-1 text-sm md:text-base'>Total Question : {total}</p>
             </div>
             <NavLink to={`../quiz/${id}`}>
                 <button className='border-2 w-full rounded-b-2xl bg-[#601c7b] h-12 text-white text-xl hover:text-[27px] duration-200'>Starts Quiz</button>

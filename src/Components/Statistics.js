@@ -7,10 +7,10 @@ const Statistics = () => {
     data = data.data;
     console.log(data);
     return (
-        <div className='grid grid-cols-2 w-10/12 mx-auto mt-12 gap-6 mb-12'>
+        <div className='grid  md:grid-cols-2 w-10/12 md:w-full lg:w-10/12 md:px-5 mx-auto mt-12 gap-6 mb-12'>
             <div className='text-center  border-2 rounded-lg py-6'>
                 <h1 className='text-xl font-semibold text-[#601c7b] mb-2'>AreaChart</h1>
-                <ResponsiveContainer width='80%' height={300}>
+                <ResponsiveContainer width='90%' height={300}>
                     <AreaChart data={data}>
                         <defs>
                             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -28,7 +28,7 @@ const Statistics = () => {
             </div>
             <div className='text-center  border-2 rounded-lg py-6'>
                 <h1 className='text-xl font-semibold text-[#601c7b] mb-2'>BarChart</h1>
-                <ResponsiveContainer width='80%' height={300}>
+                <ResponsiveContainer width='90%' height={300}>
                     <BarChart data={data}>
                         <defs>
 
@@ -45,7 +45,7 @@ const Statistics = () => {
             <div className='text-center  border-2 rounded-lg py-6'>
 
                 <h1 className='text-xl font-semibold text-[#601c7b] mb-2'>PieChart</h1>
-                <ResponsiveContainer width='80%' height={200}>
+                <ResponsiveContainer width='90%' height={200}>
                     <PieChart >
                         <Pie
                             dataKey="total" isAnimationActive={false} data={data} cx="50%" cy="50%" outerRadius={80}
@@ -58,13 +58,13 @@ const Statistics = () => {
             <div className='text-center  border-2 rounded-lg py-6'>
 
                 <h1 className='text-xl font-semibold text-[#601c7b] mb-2'>RadarChart</h1>
-                <ResponsiveContainer width='80%' height={200}>
+                <ResponsiveContainer width='90%' height={200}>
                     <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
                         <PolarGrid />
                         <PolarAngleAxis dataKey="subject" />
                         <PolarRadiusAxis angle={45} domain={[0, 15]} />
                         <Radar name="Mike" dataKey="total" stroke="#601c7b" fill="#601c7b" fillOpacity={0.6} />
-                        <Legend iconSize={10} iconType={Area} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />
+                        <Legend iconSize={10} iconType={Area} width={120} height={140} layout='horizontal' verticalAlign='middle' align="right" />
                         <Tooltip />
                     </RadarChart>
                 </ResponsiveContainer>

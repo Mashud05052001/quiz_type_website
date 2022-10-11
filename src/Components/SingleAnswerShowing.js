@@ -55,7 +55,7 @@ const SingleAnswerShowing = ({ number, answer, correctAnswer, result, setResult 
     // console.log(answer);
     return (
         <div className={({ isActive }) => isActive ? 'bg-red-200' : undefined}>
-            <div className='border-2 mx-3 mb-5 rounded-xl font-medium slick-disabled singleAnswer ' >
+            <div className='border-2 mx-1 lg:mx-3 mb-1 md:mb-3 rounded-xl font-medium slick-disabled singleAnswer ' >
                 <label className='flex items-start  cursor-pointer select-none ' >
 
                     <input type="radio" className='mt-5 ml-3 cursor-pointer' name={number} />

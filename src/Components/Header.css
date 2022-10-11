@@ -6,6 +6,10 @@
     font-weight: 900;
 }
 
+.sidebar-active span::after {
+    display: none;
+}
+
 .active-navlink {
     font-weight: 600;
     color: #601c7b;
@@ -64,3 +68,15 @@
 .navlink-span:hover::after {
     width: 105%;
 }
+
+.sidebar-active span {
+    transition: .2s ease-in-out all;
+    font-weight: 500;
+    z-index: 1;
+}
+
+
+
+
+
+.sidebar-active span:hover {}

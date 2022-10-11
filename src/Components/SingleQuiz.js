@@ -33,14 +33,14 @@ const SingleQuiz = ({ quiz, number, result, setResult, gems, setGems }) => {
     }
     // console.log(number);
     return (
-        <div className=' mb-10 border-2 border-[#601c7b] border-opacity-50 rounded-xl p-2 select-none' >
-            <div className='mb-5'>
+        <div className=' mb-3 md:mb-10 border-2 border-[#601c7b] border-opacity-50 rounded-xl p-2 select-none' >
+            <div className='mb-3 md:mb-5'>
                 <h1 className='flex text-lg '>
-                    <span className='text-xl'>Q<span className='pl-0.5'>{number + 1}.</span></span>
+                    <span className='text-sm sm:text-xl'>Q<span className='pl-0.5'>{number + 1}.</span></span>
                     <span className='pl-3 flex justify-between  w-full'>
-                        <span className='w-10/12'>{question}</span>
+                        <span className='w-10/12 text-sm sm:text-base' >{question}</span>
                         <span>
-                            <EyeIcon className='h-6 w-6 text-gray-500 cursor-pointer mr-4 mt-1' onClick={eyeClickToShowResult}
+                            <EyeIcon className='h-4 sm:h-6 md:h-5 lg:h-6 w-4 sm:w-6 md:w-5 lg:w-6 text-gray-500 cursor-pointer mr-4 mt-1' onClick={eyeClickToShowResult}
                             />
                         </span>
                     </span>
