@@ -20,7 +20,7 @@ To deploy this project run
 - [GitHub Source Code](https://github.com/programming-hero-web-course2/b6-quiz-crackerz-Mashud05052001)
 
 ## Live Website Link
-- [Netlify Live Website](https://whimsical-begonia-42e09e.netlify.app/)
+- [Netlify Live Website](https://meta-4-quiz.netlify.app/)
 
 ## Features
 - Quiz type webside
