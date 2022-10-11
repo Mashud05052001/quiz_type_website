@@ -2,16 +2,16 @@
     {
         "id": 1,
         "question": "What is the Purpose of React Router?",
-        "answer": "lorem212abns asbnjidfb asjifdb  asjibfd asbfh djib nm asjhifdb"
+        "answer": "Basically React router used for to go from i path to another. In html we can use anchor tag like this. In react.Js we also can use the anchor tag. But whenever we use the anchor tag the whole page reload automatically. It is really annowing now for a modern day webside. For solving this issue the react router come. By using react router we can easily change out tenetive outlet without reload the whole page. Also we can fixed some item like header, sidebar in a Main page so we cannot add thore common item in every path of out webside. For nodern spa the react router is one and only option for making a Single Page Application using ReactJS."
     },
     {
         "id": 2,
         "question": "How does Context API works?",
-        "answer": "lorem212abns asbnjidfb asjifdb  asjibfd asbf hdjib nm asjhifdb"
+        "answer": "We know that react is a uni-directional JS framework. We can only shift variable from parent to it's childern. But if we use normal meathod we should send the data serially. Like as property received father from Grandpa and reveived me by my dad. But sometimes it really annoying when we work with a bit react project and makes a lot of components. Thats why here introduce the react Context api. By using this we can easily transfer data from parent to it's any child not to send data serially. For this at first we should make a createContext() and saved a data on it . Then we can received this data of it's any of child by using useContext()"
     },
     {
         "id": 3,
-        "question": "Descrive the useref in ReactJS.",
-        "answer": "lorem212abns asbnjidfb asjifdb  asjibfd asbfh djib nm asjhifdb"
+        "question": "Describe the useref in ReactJS.",
+        "answer": "It is a part of react hook. By using this we can call any kind of reference from dom. Generally in reactJS it's not recommended to works with dom because react his own works with dom while we are using useState, useEffect like function. But somtimes we must need to works with JS dom . Then reacts comes the feature useref. using useref we can works with dom from reactJS."
     }
 ]

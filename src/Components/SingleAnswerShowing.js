@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const SingleAnswerShowing = ({ number, answer, correctAnswer, result, setResult }) => {
 
-    const [fill, setFill] = useState(false);
+
     const correctToasting = () => {
         toast.success('Correct Answer!', {
             position: "top-right",
@@ -51,12 +51,11 @@ const SingleAnswerShowing = ({ number, answer, correctAnswer, result, setResult 
         }
 
 
-        // setFill(true);
     }
     // console.log(answer);
     return (
         <div className={({ isActive }) => isActive ? 'bg-red-200' : undefined}>
-            <div className={fill ? 'border-2 mx-3 mb-5 rounded-xl font-medium slick-disabled singleAnswer bg-gray-200' : 'border-2 mx-3 mb-5 rounded-xl font-medium slick-disabled singleAnswer '} >
+            <div className='border-2 mx-3 mb-5 rounded-xl font-medium slick-disabled singleAnswer ' >
                 <label className='flex items-start  cursor-pointer select-none ' >
 
                     <input type="radio" className='mt-5 ml-3 cursor-pointer' name={number} />

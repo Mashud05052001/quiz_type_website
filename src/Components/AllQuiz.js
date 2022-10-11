@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SingleQuiz from './SingleQuiz';
 import { FireIcon } from '@heroicons/react/24/solid'
@@ -8,8 +8,12 @@ const AllQuiz = () => {
     const [result, setResult] = useState([]);
     const questions = useLoaderData();
     const allQues = questions.data.questions;
-    const haldOfQuestion = parseInt(allQues.length / 2);
-    const [gems, setGems] = useState(haldOfQuestion);
+    const halfOfQuestion = parseInt(allQues.length / 2);
+    // console.log(questions.data.name, halfOfQuestion);
+
+
+    const [gems, setGems] = useState(3);
+
 
     let correct = 0;
     result.forEach(item => {
@@ -19,7 +23,10 @@ const AllQuiz = () => {
     })
     const handleShowResult = () => {
         if (allQues.length !== result.length) {
-            Swal.fire(`Please answer the all question`)
+            Swal.fire({
+                icon: 'warning',
+                text: `Please Answer the all question first`,
+            })
         }
         else {
             Swal.fire(`Your Correct Answer is ${correct}`)

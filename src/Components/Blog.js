@@ -4,9 +4,9 @@ import SingleBlog from './SingleBlog';
 const Blog = () => {
     const data = useLoaderData();
     return (
-        <div className='my-12 w-6/12 mx-auto select-none'>
+        <div className='my-12 lg:w-10/12 mx-auto select-none'>
             <h1 className='text-3xl text-center text-[#601c7b] font-bold'>Answering Question</h1>
-            <div className='border-2 rounded-xl w-10/12 mx-auto mt-5 p-4'>
+            <div className='border-2 rounded-xl mx-auto mt-5 p-4'>
                 {
                     data.map(item => <SingleBlog key={item.id} info={item} />)
                 }

@@ -13,7 +13,7 @@ const SingleBlog = ({ info }) => {
                     }
                 </span>
             </h2>
-            <p className={show ? 'max-h-40 duration-1000 ease-linear pl-3 pb-2 overflow-hidden' : 'max-h-0 overflow-hidden duration-300 ease-linear pl-3 pb-2'}> <hr className='mr-6 border-2 border-black bg-black opacity-30 rounded-full mt-2 mb-1' /> <span className='font-semibold'>Answer: </span>{answer}</p>
+            <p className={show ? 'max-h-96 lg:max-h-56 duration-1000 ease-linear pl-3 pb-2 overflow-hidden' : 'max-h-0 overflow-hidden duration-300 ease-linear pl-3 pb-2 '}> <hr className='mr-6 border-2 border-black bg-black opacity-30 rounded-full mt-2 mb-1' /> <span className='font-semibold'>Answer: </span>{answer}</p>
         </div>
     );
 };

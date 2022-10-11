@@ -6,24 +6,30 @@ import Swal from 'sweetalert2';
 const SingleQuiz = ({ quiz, number, result, setResult, gems, setGems }) => {
     const { correctAnswer, id, options, question } = quiz;
     const eyeClickToShowResult = () => {
-        console.log(correctAnswer);
-        Swal.fire({
-            title: 'Do you want to see the answer? It will reduce your 1 gems',
-            showDenyButton: true,
-            confirmButtonText: 'Yes',
-            denyButtonText: `No`,
-        }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-                if (gems > 0) {
-                    Swal.fire(`Correct Answer is : ${correctAnswer}`)
-                    setGems(gems - 1);
+        if (gems === 0) {
+            Swal.fire(`You have no more gems left to see the correct answer`)
+        }
+        else {
+
+            Swal.fire({
+                title: 'Do you want to see the answer? It will reduce your 1 gems',
+                showDenyButton: true,
+                confirmButtonText: 'Yes',
+                denyButtonText: `No`,
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    if (gems > 0) {
+                        Swal.fire(`Correct Answer is : ${correctAnswer}`)
+                        const updatedGems = gems - 1;
+                        setGems(updatedGems);
+                    }
+                    else {
+                        Swal.fire(`You have no more gems left to see the correct answer`)
+                    }
                 }
-                else {
-                    Swal.fire(`You have no more gems left to see the correct answer`)
-                }
-            }
-        })
+            })
+        }
     }
     // console.log(number);
     return (
