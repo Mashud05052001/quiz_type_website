@@ -43,7 +43,7 @@ const SingleQuiz = ({ quiz, number, total, setTotal, gems, setGems }) => {
             </div>
             <div>
                 {
-                    options.map((option, indx) => <SingleAnswerShowing key={indx} answer={option} correctAnswer={correctAnswer} total={total} setTotal={setTotal} />)
+                    options.map((option, indx) => <SingleAnswerShowing key={indx} answer={option} correctAnswer={correctAnswer} total={total} setTotal={setTotal} number={number} />)
                 }
             </div>
 
